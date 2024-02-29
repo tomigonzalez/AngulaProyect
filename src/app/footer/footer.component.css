@@ -1,0 +1,50 @@
+footer {
+  width: 100%;
+  height: 23vh;
+  background-color: #332523;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+h5 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+.title {
+  color: #d9d9d9;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  height: 80%;
+}
+.politicas {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  list-style: none;
+  color: #d9d9d9;
+  height: 80%;
+}
+.redes {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  height: 80%;
+  display: flex;
+  flex-flow: column;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  text-align: right;
+  color: #d9d9d9;
+  font-size: 1.2rem;
+}
+.redes a {
+  color: #d9d9d9;
+  text-decoration: none;
+}

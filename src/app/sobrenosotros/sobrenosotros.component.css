@@ -1,0 +1,36 @@
+article {
+  width: 90%;
+  height: 100%;
+  color: #332523;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+h1 {
+  font-family: "Italiana", sans-serif;
+  font-size: 11rem;
+  margin: 0;
+}
+h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 4rem;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+}
+.contenedor {
+  width: 90%;
+}
+img {
+  position: relative;
+  bottom: 20rem;
+  left: 60rem;
+  transform: scale(0.8);
+}
+.contenedorimg {
+  width: 20%;
+  height: 10rem;
+}
