@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
     this.userService
       .login({ email, password })
       .then((response) => {
-        this.router.navigate(['/home']);
+        window.location.href = '/home';
       })
       .catch((error) => console.log(error));
   }
