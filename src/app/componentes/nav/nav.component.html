@@ -1,0 +1,24 @@
+<nav>
+    <ul class="position">
+        <li class="title"><a href="/home">LA COCKTELERA</a></li>
+        <div class="contenedor position ">
+
+            <li class="elementos"><a routerLink="/home">Inicio</a></li>
+            <li class="elementos"><a routerLink="/sobrenosotros">Sobre Nosotros</a></li>
+            <li class="elementos"><a routerLink="/cocktails">Cocktails</a></li>
+
+        </div>
+        <div class="contenedorr position">
+
+            <li class="elementos" *ngIf="userEmail"><span>{{ userEmail }}</span>
+            </li>
+            <button (click)="logout()" *ngIf="userEmail">Logout</button>
+
+
+            <li class="elementos" *ngIf="!userEmail"><a routerLink="/login">Iniciar secion</a></li>
+            <li class="elementos" *ngIf="!userEmail"><a routerLink="/register">Registro</a></li>
+
+        </div>
+    </ul>
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,25 @@
+<article>
+
+    <div class="contformulario">
+        <h2>Ingresar</h2>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div>
+                <input type="text"
+                    [ngClass]="{'is-invalid':hasErrors('email','email') || hasErrors('email','required')}" id="email"
+                    formControlName="email" placeholder="Email">
+                <div class="text-danger" *ngIf="hasErrors('email','email')">Email formato invalido</div>
+                <div class="text-danger" *ngIf="hasErrors('email','required')">Email requerido</div>
+            </div>
+            <div>
+                <input type="password" id="password" formControlName="password" placeholder="Password">
+                <div class="text-danger" *ngIf="hasErrors('password','password')">Ingrese una constraseña</div>
+            </div>
+            <div class="contenedorbutton">
+                <button>Enviar</button>
+            </div>
+        </form>
+    </div>
+    <div class="imagen">
+        <img src="../../../assets/login.png">
+    </div>
+</article>

@@ -1,0 +1,81 @@
+article {
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-flow: row;
+}
+h2 {
+  padding: 0;
+  margin: 0;
+}
+.imagen {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+.imagen img {
+  width: 100%;
+  height: 100%;
+}
+.contformulario {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+.contformulario h2 {
+  font-family: italiana;
+  font-size: 5rem;
+  color: #332523;
+}
+form {
+  width: 50%;
+  height: 30%;
+  display: flex;
+  flex-flow: column;
+  gap: 2rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #332523;
+}
+.contenedorbutton {
+  display: flex;
+
+  justify-content: center;
+  width: 100%;
+}
+button {
+  cursor: pointer;
+  width: 50%;
+  padding: 0.6rem;
+  border: none;
+  background-color: #332523;
+  color: white;
+  font-family: inter;
+  font-weight: 700;
+}
+
+button:hover {
+  background-color: #493937;
+  color: #ff5c00;
+}
+.text-danger {
+  color: red;
+  font-family: inter;
+  font-size: x-small;
+  font-weight: 100;
+}
+
+.is-invalid {
+  border-bottom: 1px solid red;
+}
