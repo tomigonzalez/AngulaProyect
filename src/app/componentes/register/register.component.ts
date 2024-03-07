@@ -1,3 +1,4 @@
+import { UserService } from './../../service/user.service';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,8 +8,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { UserService } from '../../service/user.service';
+
 import { Router } from '@angular/router';
+import { UsersService } from '../../service/firestore/users.service';
 
 @Component({
   selector: 'app-register',
@@ -19,11 +21,12 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   myForm: FormGroup;
-
+  isLoading = false;
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private userServiceFirestore: UsersService
   ) {
     this.myForm = this.fb.group({
       usuario: ['', [Validators.required, Validators.minLength(3)]],
@@ -41,15 +44,29 @@ export class RegisterComponent implements OnInit {
     );
   }
 
-  onSubmit() {
+  async onSubmit() {
+    this.isLoading = true;
     let email = this.myForm.get('email')!.value;
     let password = this.myForm.get('password')!.value;
 
-    this.userService
-      .register({ email, password })
-      .then((response) => {
-        this.router.navigate(['/login']);
-      })
-      .catch((error) => console.log(error));
+    try {
+      //Registrar usuario con autenticación de Firebase (asumiendo un método en userService)
+      const response = await this.userService.register({ email, password });
+
+      // Extraer ID de usuario de la respuesta de autenticación
+      const userId = response.user.uid;
+
+      // Crear documento de usuario en Firestore (asumiendo un método en userServiceFirestore)
+      await this.userServiceFirestore.addUser({
+        ...this.myForm.value,
+        id: userId,
+        rol: '',
+      });
+      this.isLoading = false;
+      window.location.href = '/home';
+    } catch (error) {
+      console.log(error, 'ingresa algo');
+      this.isLoading = false;
+    }
   }
 }

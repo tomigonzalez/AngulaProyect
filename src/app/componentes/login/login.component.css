@@ -79,3 +79,12 @@ button:hover {
 .is-invalid {
   border-bottom: 1px solid red;
 }
+.contenedor-cargador {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  place-content: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}

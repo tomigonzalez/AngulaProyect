@@ -20,7 +20,7 @@ import { UserService } from '../../service/user.service';
 })
 export class LoginComponent implements OnInit {
   myForm: FormGroup;
-
+  isLoading = false;
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
@@ -42,15 +42,19 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  onSubmit() {
+  async onSubmit() {
     let email = this.myForm.get('email')!.value;
     let password = this.myForm.get('password')!.value;
 
-    this.userService
-      .login({ email, password })
-      .then((response) => {
-        window.location.href = '/home';
-      })
-      .catch((error) => console.log(error));
+    try {
+      this.isLoading = true;
+      const response = await this.userService.login({ email, password });
+      console.log(response);
+      this.isLoading = false;
+      window.location.href = '/home';
+    } catch (error) {
+      console.log(error, 'ingresa algo');
+      this.isLoading = false;
+    }
   }
 }
