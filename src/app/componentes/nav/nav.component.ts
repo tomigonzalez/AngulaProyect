@@ -2,7 +2,6 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { UserService } from '../../service/user.service';
 import { CommonModule } from '@angular/common';
-import { reload } from '@firebase/auth';
 
 @Component({
   selector: 'app-nav',
@@ -23,9 +22,11 @@ export class NavComponent implements OnInit {
     this.userService
       .getUserEmail()
       .then((email) => {
-        this.userEmail = email;
-        this.cdr.detectChanges();
-        console.log((this.userEmail = email));
+        // Verifica si el email está presente antes de realizar el split
+        if (email) {
+          this.userEmail = email.split('@')[0];
+        }
+        // Si no hay email, no se realiza ninguna acción
       })
       .catch((error) => {
         console.log('Error durante la recuperacion del user: ', error);

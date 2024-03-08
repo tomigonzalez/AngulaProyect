@@ -43,18 +43,24 @@ export class LoginComponent implements OnInit {
   }
 
   async onSubmit() {
-    let email = this.myForm.get('email')!.value;
-    let password = this.myForm.get('password')!.value;
+    // Verifica si el formulario es válido
+    if (this.myForm.value) {
+      let email = this.myForm.get('email')!.value;
+      let password = this.myForm.get('password')!.value;
 
-    try {
-      this.isLoading = true;
-      const response = await this.userService.login({ email, password });
-      console.log(response);
-      this.isLoading = false;
-      window.location.href = '/home';
-    } catch (error) {
-      console.log(error, 'ingresa algo');
-      this.isLoading = false;
+      try {
+        this.isLoading = true;
+        const response = await this.userService.login({ email, password });
+        console.log(response);
+        this.isLoading = false;
+        window.location.href = '/home';
+      } catch (error) {
+        this.isLoading = false;
+        this.myForm.markAllAsTouched();
+        console.log(error, 'ingresa algo');
+      }
+    } else {
+      this.myForm.markAllAsTouched();
     }
   }
 }

@@ -21,7 +21,7 @@ h1 {
 .contenedordecocktails {
   width: 73%;
   height: 98%;
-  background-color: aliceblue;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,4 +99,20 @@ h4 {
 }
 .preparacion {
   width: 40%;
+}
+.crearCocktail {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.crearCocktail p {
+  border-radius: 2rem;
+  background-color: white;
+  padding: 0.5rem;
+  font-weight: bold;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
 }
