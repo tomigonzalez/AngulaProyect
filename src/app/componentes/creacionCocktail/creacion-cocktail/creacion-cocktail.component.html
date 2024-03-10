@@ -1,0 +1,28 @@
+<article>
+    <!-- (ngSubmit)="onSubmit()" -->
+    <form [formGroup]="myForm">
+        <div>
+            <!-- [ngClass]="{'is-invalid':hasErrors('email','email') || hasErrors('email','required')}"
+            -->
+            <input type="text" id="nombre" formControlName="nombre" placeholder="nombre">
+            <!-- <div class="text-danger" *ngIf="hasErrors('email','email')">Email formato invalido</div>
+            <div class="text-danger" *ngIf="hasErrors('email','required')">Email requerido</div> -->
+        </div>
+        <div>
+            <input type="text" id="descripcion" formControlName="descripcion" placeholder="descripcion">
+        </div>
+        <div>
+            <input type="text" id="ingredientes" formControlName="ingredientes" placeholder="ingredientes">
+        </div>
+        <div>
+            <input type="text" id="preparacion" formControlName="preparacion" placeholder="preparacion">
+            <!-- <div class="text-danger" *ngIf="hasErrors('password','password')">Ingrese una constraseña</div> -->
+        </div>
+        <div>
+            <input type="text" id="" formControlName="" placeholder="">
+        </div>
+        <div class="contenedorbutton">
+            <button>Enviar</button>
+        </div>
+    </form>
+</article>

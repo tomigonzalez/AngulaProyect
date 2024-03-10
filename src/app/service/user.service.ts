@@ -6,12 +6,14 @@ import {
   signOut,
 } from '@angular/fire/auth';
 import { getAuth, onAuthStateChanged } from '@firebase/auth';
+import { UsersService } from './firestore/users.service';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private auth: Auth) {}
+  constructor(private auth: Auth, private userFire: UsersService) {}
 
   register({ email, password }: any) {
     return createUserWithEmailAndPassword(this.auth, email, password);
@@ -41,5 +43,24 @@ export class UserService {
         }
       );
     });
+  }
+  async loginNow(): Promise<any> {
+    try {
+      const userEmail = await this.getUserEmail();
+      const email = userEmail as string;
+      const user = await this.UserBD(email); // Use 'user' for clarity
+      return user;
+    } catch (error) {
+      throw error; // Re-throw for proper error handling
+    }
+  }
+
+  async UserBD(email: string): Promise<any> {
+    try {
+      const users = await firstValueFrom(this.userFire.getUser());
+      return users.find((user) => user.email === email);
+    } catch (error) {
+      throw error; // Re-throw for proper error handling
+    }
   }
 }

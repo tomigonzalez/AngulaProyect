@@ -104,15 +104,21 @@ h4 {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 .crearCocktail p {
   border-radius: 2rem;
   background-color: white;
   padding: 0.5rem;
   font-weight: bold;
-  -webkit-border-radius: 2rem;
-  -moz-border-radius: 2rem;
-  -ms-border-radius: 2rem;
-  -o-border-radius: 2rem;
+}
+
+.crearCocktail a {
+  text-decoration: none;
+  color: #332523;
+}
+.crearCocktail a p:hover {
+  background-color: #332523;
+  color: white;
 }

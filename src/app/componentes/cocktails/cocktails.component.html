@@ -1,9 +1,11 @@
 <section>
     <h1>Cocktails</h1>
-    <div class="crearCocktail">
-        <p>Crear Cocktail</p>
+    <div class="crearCocktail" *ngIf="currentUser && currentUser.rol === 'admin' ">
+        <a href="#">
+            <p>Crear Cocktail</p>
+        </a>
     </div>
-    <div class="contenedormayor">
+    <div class=" contenedormayor">
         <div class="contenedordecocktails">
             <div class="borde1">
                 <div class="borde2">
