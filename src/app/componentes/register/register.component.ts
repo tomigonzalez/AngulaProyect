@@ -1,4 +1,3 @@
-import { UserService } from './../../service/user.service';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,8 +7,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-
-import { Router } from '@angular/router';
+import { UserService } from './../../service/user.service';
 import { UsersService } from '../../service/firestore/users.service';
 
 @Component({
@@ -25,7 +23,6 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private router: Router,
     private userServiceFirestore: UsersService
   ) {
     this.myForm = this.fb.group({

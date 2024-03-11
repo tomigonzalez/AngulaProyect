@@ -44,6 +44,7 @@ export class UserService {
       );
     });
   }
+
   async loginNow(): Promise<any> {
     try {
       const userEmail = await this.getUserEmail();

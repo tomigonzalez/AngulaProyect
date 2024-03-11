@@ -1,7 +1,10 @@
 nav {
   width: 100%;
   height: 10vh;
-  position: fixed;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.159);
+  font-family: "Inter", sans-serif;
+  z-index: 2;
 }
 li {
   list-style: none;
@@ -33,4 +36,36 @@ a:hover {
 }
 .contenedorr {
   width: 15%;
+}
+button {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  background-color: #ffffff;
+  color: #332523;
+  cursor: pointer;
+}
+i {
+  font-size: 1rem;
+}
+button:hover {
+  background-color: #332523;
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .position {
+    flex-flow: column-reverse;
+  }
+  .title {
+    display: NONE;
+  }
+
+  .contenedor {
+    flex-flow: row;
+  }
+  .contenedorr {
+    flex-flow: row;
+    width: 50%;
+  }
 }

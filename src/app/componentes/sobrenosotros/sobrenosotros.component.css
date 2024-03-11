@@ -34,3 +34,145 @@ img {
   width: 20%;
   height: 10rem;
 }
+@media all and (min-width: 1254px) and (max-width: 1360px) {
+  img {
+    left: 50rem;
+    transform: scale(0.7);
+  }
+}
+@media (max-width: 1254px) {
+  img {
+    left: 40rem;
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+  }
+
+  h1 {
+    font-family: "Italiana", sans-serif;
+    font-size: 9rem;
+    margin: 0;
+  }
+}
+@media (max-width: 1000px) {
+  img {
+    left: 36rem;
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+  }
+  h1 {
+    font-family: "Italiana", sans-serif;
+    font-size: 8rem;
+    margin: 0;
+  }
+  h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 3.5rem;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  img {
+    left: 30rem;
+    transform: scale(0.4);
+    bottom: 16rem;
+  }
+  h1 {
+    font-family: "Italiana", sans-serif;
+    font-size: 7rem;
+    margin: 0;
+  }
+  h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 3rem;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  img {
+    left: 24rem;
+    transform: scale(0.4);
+    bottom: 16rem;
+  }
+  h1 {
+    font-family: "Italiana", sans-serif;
+    font-size: 7rem;
+    margin: 0;
+  }
+  h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 3rem;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 800px) {
+  img {
+    left: 20rem;
+    transform: scale(0.35);
+    bottom: 16rem;
+  }
+  h1 {
+    font-family: "Italiana", sans-serif;
+    font-size: 6rem;
+    margin: 0;
+  }
+  h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 650px) {
+  img {
+    left: 10rem;
+    transform: scale(0.25);
+    bottom: 14rem;
+  }
+  h1 {
+    font-family: "Italiana", sans-serif;
+    font-size: 4rem;
+    margin: 0;
+  }
+  h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+  }
+
+  .contenedorimg {
+    width: 20%;
+    height: 5rem;
+  }
+}

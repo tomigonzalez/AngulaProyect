@@ -1,21 +1,21 @@
-<section>
+<section id="cocktail">
     <h1>Cocktails</h1>
     <div class="crearCocktail" *ngIf="currentUser && currentUser.rol === 'admin' ">
-        <a href="#">
+
+        <a href="/crearCocktail">
             <p>Crear Cocktail</p>
         </a>
     </div>
-    <div class=" contenedormayor">
+    <div class="contenedormayor" *ngFor="let cocktail of cocktails">
+        <div class="deletebutton"><button (click)="onClickDelete(cocktail)"><i
+                    class="fa-regular fa-trash-can"></i></button></div>
         <div class="contenedordecocktails">
             <div class="borde1">
                 <div class="borde2">
                     <div class="contenedortitle">
                         <div class="title">
-                            <h3>Cocktail de fernet</h3>
-                            <p>Muchos describen su sabor como un poco intenso y extraño, pueden ser de diferentes
-                                sabores como manzanilla, azafrán o cardamomo y aunque puede ser un poco desagradable, al
-                                mezclarlo con refresco de Cola, el fernet se convierte en uno de los tragos más
-                                solicitados por los argentinos</p>
+                            <h3>{{cocktail.nombre}}</h3>
+                            <p>{{cocktail.descripcion}}</p>
                         </div>
                         <div class="imagen">
                             <img src="../../assets/trago1.png">
@@ -24,22 +24,16 @@
                     <div class="info">
                         <div class="ingredientes">
                             <h4>Ingredientes</h4>
-                            <p>30 mililitros de Fernet</p>
-                            <p>60 mililitros de Coca cola</p>
-                            <p>Hielo triturado</p>
-                            <p> Rodaja de limón</p>
-                            <p> Vaso alto</p>
+                            <div *ngFor="let ingrediente of cocktail.ingredientes">
+                                <p>{{ ingrediente }}</p>
+                            </div>
                         </div>
                         <div class="preparacion">
                             <h4>Preparacion</h4>
-                            <p>Paso 1 :
-                                Esta bebida digestiva se realiza tomando una coctelera.</p>
-                            <p>Paso 2 :
-                                Se agrega el fernet hielo y bebida de cola.</p>
-                            <p>Paso 3 :
-                                Se mezcla muy bien.</p>
-                            <p>Paso 4 :
-                                Se coloca en vaso alto con una rodaja de limón como decoración.</p>
+                            <div *ngFor="let preparacion of cocktail.preparacion; let i = index">
+                                <p>Paso {{ i + 1 }}:</p>
+                                <p>{{ preparacion }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -48,3 +42,46 @@
     </div>
 
 </section>
+
+
+<!-- <div class=" contenedormayor">
+    <div class="contenedordecocktails">
+        <div class="borde1">
+            <div class="borde2">
+                <div class="contenedortitle">
+                    <div class="title">
+                        <h3>Cocktail de fernet</h3>
+                        <p>Muchos describen su sabor como un poco intenso y extraño, pueden ser de diferentes
+                            sabores como manzanilla, azafrán o cardamomo y aunque puede ser un poco desagradable, al
+                            mezclarlo con refresco de Cola, el fernet se convierte en uno de los tragos más
+                            solicitados por los argentinos</p>
+                    </div>
+                    <div class="imagen">
+                        <img src="../../assets/trago1.png">
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="ingredientes">
+                        <h4>Ingredientes</h4>
+                        <p>30 mililitros de Fernet</p>
+                        <p>60 mililitros de Coca cola</p>
+                        <p>Hielo triturado</p>
+                        <p> Rodaja de limón</p>
+                        <p> Vaso alto</p>
+                    </div>
+                    <div class="preparacion">
+                        <h4>Preparacion</h4>
+                        <p>Paso 1 :
+                            Esta bebida digestiva se realiza tomando una coctelera.</p>
+                        <p>Paso 2 :
+                            Se agrega el fernet hielo y bebida de cola.</p>
+                        <p>Paso 3 :
+                            Se mezcla muy bien.</p>
+                        <p>Paso 4 :
+                            Se coloca en vaso alto con una rodaja de limón como decoración.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

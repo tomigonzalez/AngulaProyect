@@ -1,28 +1,37 @@
 <article>
+
     <!-- (ngSubmit)="onSubmit()" -->
-    <form [formGroup]="myForm">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <h3>Agregar Cocktail</h3>
         <div>
-            <!-- [ngClass]="{'is-invalid':hasErrors('email','email') || hasErrors('email','required')}"
-            -->
-            <input type="text" id="nombre" formControlName="nombre" placeholder="nombre">
-            <!-- <div class="text-danger" *ngIf="hasErrors('email','email')">Email formato invalido</div>
-            <div class="text-danger" *ngIf="hasErrors('email','required')">Email requerido</div> -->
+
+            <input type="text" id="nombre" formControlName="nombre" placeholder="Nombre">
+            <div class="text-danger" *ngIf="hasErrors('nombre','required')">Nombre requerido</div>
         </div>
         <div>
-            <input type="text" id="descripcion" formControlName="descripcion" placeholder="descripcion">
+            <textarea id="descripcion" formControlName="descripcion" placeholder="Descripción"></textarea>
+            <div class="text-danger" *ngIf="hasErrors('descripcion','required')">Descripción requerido</div>
         </div>
         <div>
-            <input type="text" id="ingredientes" formControlName="ingredientes" placeholder="ingredientes">
+
+            <textarea id="ingredientes" formControlName="ingredientes"
+                placeholder="Ingredientes (separar con ', O .')"></textarea>
+            <div class="text-danger" *ngIf="hasErrors('ingredientes','required')">Ingredientes requerido</div>
         </div>
         <div>
-            <input type="text" id="preparacion" formControlName="preparacion" placeholder="preparacion">
-            <!-- <div class="text-danger" *ngIf="hasErrors('password','password')">Ingrese una constraseña</div> -->
+            <textarea id="preparacion" formControlName="preparacion"
+                placeholder="Preparación (separar con ', O .')"></textarea>
+            <div class="text-danger" *ngIf="hasErrors('preparacion','required')">Preparación requerido</div>
         </div>
         <div>
-            <input type="text" id="" formControlName="" placeholder="">
+            <input type="text" id="img" formControlName="img" placeholder="Img">
+            <div class="text-danger" *ngIf="hasErrors('img','required')">Img requerido</div>
         </div>
         <div class="contenedorbutton">
             <button>Enviar</button>
         </div>
     </form>
+    <div class="contenedor-cargador" *ngIf="isLoading">
+        <img src="../../../../assets/loader.svg" alt="Cargando">
+    </div>
 </article>

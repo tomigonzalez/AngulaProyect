@@ -3,16 +3,17 @@
         <li class="title"><a href="/home">LA COCKTELERA</a></li>
         <div class="contenedor position ">
 
-            <li class="elementos"><a href="/home">Inicio</a></li>
-            <li class="elementos"><a href="/sobrenosotros">Sobre Nosotros</a></li>
-            <li class="elementos"><a href="/cocktails">Cocktails</a></li>
+            <li class="elementos"><a routerLink="#">Inicio</a></li>
+            <li class="elementos"><a routerLink="#">Sobre Nosotros</a></li>
+            <li class="elementos"><a routerLink="#">Cocktails</a></li>
 
         </div>
         <div class="contenedorr position">
 
             <li class="elementos" *ngIf="userEmail"><span>{{ userEmail }}</span>
+                <button (click)="logout()" *ngIf="userEmail"><i class="fa-solid fa-right-to-bracket"></i></button>
             </li>
-            <button (click)="logout()" *ngIf="userEmail">Logout</button>
+
 
 
             <li class="elementos" *ngIf="!userEmail"><a href="/login">Iniciar sesion</a></li>

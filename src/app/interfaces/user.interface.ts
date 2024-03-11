@@ -5,3 +5,12 @@ export default interface User {
   password: string;
   rol: any;
 }
+
+export default interface Cocktail {
+  id?: string;
+  nombre: string;
+  descripcion: string;
+  ingredientes: string;
+  preparacion: string;
+  img: string;
+}

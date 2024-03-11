@@ -26,18 +26,6 @@ export class NavComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
-    // this.userService
-    //   .getUserEmail()
-    //   .then((email) => {
-    //     // Verifica si el email está presente antes de realizar el split
-    //     if (email) {
-    //       this.userEmail = email.split('@')[0];
-    //     }
-    //     // Si no hay email, no se realiza ninguna acción
-    //   })
-    //   .catch((error) => {
-    //     console.log('Error durante la recuperacion del user: ', error);
-    //   });
   }
 
   logout() {

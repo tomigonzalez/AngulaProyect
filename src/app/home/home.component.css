@@ -35,6 +35,8 @@ article {
   height: 100%;
 }
 button {
+  font-family: "Inter", sans-serif;
+  font-weight: bolder;
   color: white;
   background-color: #332523;
   border: none;
@@ -43,4 +45,9 @@ button {
   padding-bottom: 5px;
   padding-left: 17px;
   padding-right: 17px;
+}
+@media (max-width: 1000px) {
+  .contenedorizquierdo {
+    display: none;
+  }
 }
