@@ -46,7 +46,7 @@ button {
   padding-left: 17px;
   padding-right: 17px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .contenedorizquierdo {
     display: none;
   }

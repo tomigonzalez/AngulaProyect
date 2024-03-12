@@ -61,7 +61,7 @@ export class CreacionCocktailComponent implements OnInit {
           id: uuidv4(),
         });
         this.isLoading = false;
-        window.location.href = '/home';
+        window.location.href = '/layout';
       } catch (error) {
         this.isLoading = false;
         console.log(error, 'ingresa algo');

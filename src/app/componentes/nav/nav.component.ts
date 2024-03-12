@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { UserService } from '../../service/user.service';
 import { CommonModule } from '@angular/common';
@@ -27,7 +27,9 @@ export class NavComponent implements OnInit {
       console.log(error);
     }
   }
-
+  navigateTo(route: string) {
+    this.router.navigate([route]);
+  }
   logout() {
     this.userService
       .logout()

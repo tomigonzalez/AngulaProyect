@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
           rol: '',
         });
         this.isLoading = false;
-        window.location.href = '/home';
+        window.location.href = '/layout';
       } catch (error) {
         console.log(error, 'ingresa algo');
         this.myForm.markAllAsTouched();

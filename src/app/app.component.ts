@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { SobrenosotrosComponent } from './componentes/sobrenosotros/sobrenosotros.component';
 import { CocktailsComponent } from './componentes/cocktails/cocktails.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { LayoutComponent } from './componentes/layout/layout/layout.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
     SobrenosotrosComponent,
     CocktailsComponent,
     FooterComponent,
+    LayoutComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

@@ -1,25 +1,26 @@
 <nav>
     <ul class="position">
-        <li class="title"><a href="/home">LA COCKTELERA</a></li>
+        <li class="title"><a href="/layout">LA COCKTELERA</a></li>
         <div class="contenedor position ">
+            <ul class="ul2">
+                <li class="elementos"><a routerLink="#">Inicio</a></li>
+                <li class="elementos"><a routerLink="#">Sobre Nosotros</a></li>
+                <li class="elementos"><a routerLink="#">Cocktails</a></li>
 
-            <li class="elementos"><a routerLink="#">Inicio</a></li>
-            <li class="elementos"><a routerLink="#">Sobre Nosotros</a></li>
-            <li class="elementos"><a routerLink="#">Cocktails</a></li>
-
+            </ul>
         </div>
-        <div class="contenedorr position">
+        <div class="contenedorr position" *ngIf="userEmail">
+            <ul class="ul2" *ngIf="userEmail">
+                <li class="elementos" *ngIf="userEmail"><span>{{ userEmail }}</span>
+                    <button (click)="logout()" *ngIf="userEmail"><i class="fa-solid fa-right-to-bracket"></i></button>
+                </li>
 
-            <li class="elementos" *ngIf="userEmail"><span>{{ userEmail }}</span>
-                <button (click)="logout()" *ngIf="userEmail"><i class="fa-solid fa-right-to-bracket"></i></button>
-            </li>
+            </ul>
+        </div>
 
-
-
+        <div class="contenedorrr" *ngIf="!userEmail">
             <li class="elementos" *ngIf="!userEmail"><a href="/login">Iniciar sesion</a></li>
-            <li class="elementos" *ngIf="!userEmail"><a href="/register">Registro</a></li>
-
+            <li class="elementos" *ngIf="!userEmail"><a routerLink="/register">Registro</a></li>
         </div>
     </ul>
-</nav>
-<router-outlet></router-outlet>
+</nav><router-outlet></router-outlet>

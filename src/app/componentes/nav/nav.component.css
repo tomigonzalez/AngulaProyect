@@ -9,6 +9,13 @@ nav {
 li {
   list-style: none;
 }
+.ul2 {
+  padding: inherit;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
 a {
   text-decoration: none;
   font-family: "Inter", sans-serif;
@@ -52,7 +59,19 @@ button:hover {
   background-color: #332523;
   color: white;
 }
-
+.elementos {
+  place-content: center;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+.contenedorrr {
+  display: flex;
+  flex-flow: row;
+  height: 100%;
+}
 @media (max-width: 800px) {
   .position {
     flex-flow: column-reverse;
@@ -60,9 +79,15 @@ button:hover {
   .title {
     display: NONE;
   }
-
+  .contenedorrr {
+    width: 50%;
+    display: flex;
+    flex-flow: row;
+    height: 100%;
+  }
   .contenedor {
     flex-flow: row;
+    width: 60%;
   }
   .contenedorr {
     flex-flow: row;

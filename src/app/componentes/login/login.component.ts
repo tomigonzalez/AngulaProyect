@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
         const response = await this.userService.login({ email, password });
         console.log(response);
         this.isLoading = false;
-        window.location.href = '/home';
+        window.location.href = '/layout';
       } catch (error) {
         this.isLoading = false;
         this.myForm.markAllAsTouched();
